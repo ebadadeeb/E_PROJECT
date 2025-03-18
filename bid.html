@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Bid | Elite Auctions</title>
+  <link rel="stylesheet" href="styles.css">
+       
+</head>
+<body class="bid101">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">Elite<span>Auctions</span></a>
+                <div class="user-actions">
+                    <a href="/sign.html">Sign In</a>
+                    <a href="#">Register</a>
+                    <a href="#">My Bids</a>
+                </div>
+            </div>
+            <nav class="primary-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Live Auctions</a></li>
+                    <li><a href="#">Upcoming Auctions</a></li>
+                    <li><a href="#">Completed Auctions</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="bid-container">
+                <!-- Item Details -->
+                <div class="item-details">
+                    <div class="item-image" style="background-image: url('/api/placeholder/600/300');" id="itemImage"></div>
+                    <div class="item-description">
+                        <h1 class="item-title" id="itemTitle">Loading item details...</h1>
+                        <ul class="item-specs">
+                            <li>
+                                <span class="spec-label">Item ID:</span>
+                                <span id="itemId">--</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Starting Bid:</span>
+                                <span>$800</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Current Bid:</span>
+                                <span id="currentBid">$--</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Time Remaining:</span>
+                                <span id="timeRemaining">2d 4h</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Total Bids:</span>
+                                <span>14</span>
+                            </li>
+                            <li>
+                                <span class="spec-label">Condition:</span>
+                                <span>Excellent</span>
+                            </li>
+                        </ul>
+                        <div class="item-description-text">
+                            <h3>Description</h3>
+                            <p>This is a fine example of craftsmanship and design. The item is in excellent condition and has been authenticated by our team of experts. This would make a wonderful addition to any collection or home.</p>
+                            <p>The piece comes with full documentation and a certificate of authenticity. Shipping and handling are available at an additional cost, or the item can be picked up from our showroom.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bid Form -->
+                <div class="bid-form-container">
+                    <h2 class="bid-form-title">Place Your Bid</h2>
+                    <div class="bid-info">
+                        <p>Current Bid: <span class="current-bid" id="currentBidForm">$--</span></p>
+                        <p>Minimum Bid: <span class="min-bid" id="minBid">$--</span></p>
+                        <p>Bid Increment: $50</p>
+                    </div>
+                    
+                    <form class="bid-form" id="bidForm">
+                        <div class="form-group">
+                            <label for="bidAmount">Your Bid Amount ($)</label>
+                            <input type="number" id="bidAmount" name="bidAmount" min="0" step="50" required>
+                            <div class="error-message" id="bidError">Please enter a valid bid amount (must be at least the minimum bid).</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="maxBid">Maximum Bid (Optional)</label>
+                            <input type="number" id="maxBid" name="maxBid" min="0" step="50">
+                            <p>Set a maximum amount you're willing to pay. We'll automatically increase your bid to keep you winning.</p>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block">Place Bid Now</button>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        Your bid has been successfully placed! You are now the highest bidder.
+                    </div>
+                    
+                    <div class="bid-rules">
+                        <h3>Bidding Rules</h3>
+                        <ul>
+                            <li>All bids are binding and cannot be retracted.</li>
+                            <li>Winning bidders are responsible for paying the final bid amount plus applicable fees.</li>
+                            <li>Payment must be made within 3 days of auction close.</li>
+                            <li>A buyer's premium of 15% applies to all won items.</li>
+                            <li>By placing a bid, you agree to our Terms & Conditions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bid History -->
+            <div class="bid-history">
+                <h3>Bid History</h3>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Bidder</th>
+                            <th>Bid Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar 6, 2025 - 14:32</td>
+                            <td>j***n</td>
+                            <td>$1,200</td>
+                            <td class="winning">Current Highest</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 5, 2025 - 19:45</td>
+                            <td>a***e</td>
+                            <td>$1,150</td>
+                            <td class="outbid">Outbid</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 5, 2025 - 16:20</td>
+                            <td>r***t</td>
+                            <td>$1,100</td>
+                            <td class="outbid">Outbid</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 4, 2025 - 11:05</td>
+                            <td>s***a</td>
+                            <td>$1,050</td>
+                            <td class="outbid">Outbid</td>
+                        </tr>
+                        <tr>
+                            <td>Mar 3, 2025 - 09:15</td>
+                            <td>t***y</td>
+                            <td>$1,000</td>
+                            <td class="outbid">Outbid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Similar Items -->
+            <div class="similar-items">
+                <h2 class="section-title">Similar Items</h2>
+                <div class="auction-items">
+                    <div class="item-card">
+                        <div class="item-img" style="background-image: url('/api/placeholder/300/200');"></div>
+                        <div class="item-info">
+                            <h3 class="item-title">Edwardian Writing Table</h3>
+                            <div class="item-meta">
+                                <span class="current-bid">Current Bid: $950</span>
+                                <span class="time-left">1d 6h left</span>
+                            </div>
+                            <a href="bid.html?item=108&name=Edwardian%20Writing%20Table&current=950" class="btn">View Item</a>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-img" style="background-image: url('/api/placeholder/300/200');"></div>
+                        <div class="item-info">
+                            <h3 class="item-title">Antique Mahogany Desk</h3>
+                            <div class="item-meta">
+                                <span class="current-bid">Current Bid: $1,400</span>
+                                <span class="time-left">3d 12h left</span>
+                            </div>
+                            <a href="bid.html?item=109&name=Antique%20Mahogany%20Desk&current=1400" class="btn">View Item</a>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-img" style="background-image: url('/api/placeholder/300/200');"></div>
+                        <div class="item-info">
+                            <h3 class="item-title">Vintage Bureau Desk</h3>
+                            <div class="item-meta">
+                                <span class="current-bid">Current Bid: $850</span>
+                                <span class="time-left">5d 8h left</span>
+                            </div>
+                            <a href="bid.html?item=110&name=Vintage%20Bureau%20Desk&current=850" class="btn">View Item</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footerc>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>With 25 years of experience in the auction industry, EliteAuctions is proud to bring our expertise to the digital world.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Live Auctions</a></li>
+                        <li><a href="#">Completed Auctions</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Paintings</a></li>
+                        <li><a href="#">Lighting</a></li>
+                        <li><a href="#">Decorative Arts</a></li>
+                        <li><a href="#">All Categories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 EliteAuctions. All rights reserved. 25 years of excellence in auction services.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="bid.js"></script>
+</body>
+</html>
